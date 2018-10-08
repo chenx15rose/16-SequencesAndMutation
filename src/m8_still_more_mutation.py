@@ -11,7 +11,7 @@ import m6_mutation
 
 
 def main():
-    #run_test_RETURN_delete_negatives()
+    run_test_RETURN_delete_negatives()
     run_test_MUTATE_delete_negatives()
 
 
@@ -130,11 +130,9 @@ def MUTATE_delete_negatives(numbers):
 
     Precondition: The argument is a list of numbers.
     """
-    list = []
-    for k in range(len(numbers)):
-        if numbers[k]>=0:
-            list+=[numbers[k]]
-    numbers = list
+    for number in reversed(numbers):
+        if number<0:
+            numbers.remove(number)
 
     # TODO: 3. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
